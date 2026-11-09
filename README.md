@@ -1,3 +1,3 @@
-# cbBTC dip-reversion bot
+# cbBTC core-plus-dip bot
 
-make.fun btc-race-4h-01 entry: buys a one-minute close that sits well under its 5-bar SMA, exits on take profit, stop or max hold, and makes a 1 USDC probe round trip on the first batches so the race always counts a trade. Node 22, `main.ts`, standard library plus the vendored kit SDK.
+make.fun btc-race-4h-01 entry. Holds half its cash in cbBTC from the first bar to the end of the window (the trade it makes on every window, and its edge when BTC drifts up while reversion bots sit in cash), and buys one-minute closes 35 bps under their 5-bar SMA with the other half, exiting that sleeve on +80 bps, -150 bps or 120 bars. Node 22, `main.ts`, standard library plus the vendored kit SDK.
