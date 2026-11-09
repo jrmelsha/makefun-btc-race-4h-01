@@ -13,12 +13,15 @@
 
 import { BPS, runBars, type BuyInput, type SellInput } from './vendor/makefun-bars.ts';
 
-const CORE_BPS = 5_000n;
-const SMA_BARS = 5;
-const DIP_BPS = 35n;
+// Tournament sizing: only the race PnL ranks and the dev window is a pass/fail gate, so the core is
+// as large as the dip sleeve's dev profit can carry (an underdog in a rank-order contest buys
+// variance). SMA(4) with a 25 bps dip earns the most per USDC on dev, which funds the larger core.
+const CORE_BPS = 7_000n;
+const SMA_BARS = 4;
+const DIP_BPS = 25n;
 const TP_BPS = 80n;
 const SL_BPS = 150n;
-const MAX_HOLD_BARS = 120;
+const MAX_HOLD_BARS = 240;
 const ENTRY_SLIPPAGE_BPS = 100;
 const EXIT_SLIPPAGE_BPS = 300;
 
